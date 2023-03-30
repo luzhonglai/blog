@@ -3,8 +3,8 @@
  * @Author: luzhonglai
  * @Date: 2022-09-27 01:30:05
  * @LastEditors: luzhonglai
- * @LastEditTime: 2022-10-04 20:09:03
- * @FilePath: /blog/docs/test/evsBus.js
+ * @LastEditTime: 2022-10-10 00:32:20
+ * @FilePath: /blog/handwriting/evsBus.js
  */
 
 class evsBus {
@@ -14,7 +14,7 @@ class evsBus {
   }
 
   // 监听事件
-  on(type, fn) {
+  on(type, fn) { 
     let fns = this.map[type]
     // 判断当前type 是否在队列
     if (!fns) {
@@ -50,6 +50,12 @@ class evsBus {
         // 删除整个事件
         delete this.map[type]
       }
+    }
+  }
+
+  once(type, callback){
+    const proxyCallback = (...payload) =>{
+
     }
   }
 }
